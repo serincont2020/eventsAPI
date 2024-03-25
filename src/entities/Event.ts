@@ -2,7 +2,7 @@ import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } 
 
 @Entity()
 export class EventData extends BaseEntity {
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn('uuid')
     idEvent: string
 
     @Column()
@@ -11,13 +11,16 @@ export class EventData extends BaseEntity {
     @Column()
     ticketPrice: number // relation tickets
 
-    @Column()
-    startDate: Date 
+    @Column({type: "timestamp"})
+    startDate: Date
 
     @Column()
     location: string
 
-    @Column()
+    @Column({nullable: true})
+    coordinates: string
+
+    @Column({nullable: true})
     sitesInterest: string
 
     @Column()

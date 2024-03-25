@@ -2,13 +2,13 @@ import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } 
 
 @Entity()
 export class AssistantData extends BaseEntity {
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn('uuid')
     idAssistant: string
 
-    @Column()
+    @Column({nullable: true})
     assistant: number
 
-    @Column()
+    @Column({nullable: true})
     day: number
 
     @Column()

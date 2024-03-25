@@ -2,15 +2,15 @@ import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } 
 
 @Entity()
 export class TicketData extends BaseEntity{
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn('uuid')
     idTicket: string
     
-    @Column()
+    @Column({nullable: true})
     ticketPrice: number  // relation events
 
-    @Column()
+    @Column({nullable: true})
     ticketAvailable: number
 
-    @Column()
+    @Column({nullable: true})
     ticketSold: number
 }

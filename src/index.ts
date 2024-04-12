@@ -1,13 +1,13 @@
+require('dotenv').config()
 import "reflect-metadata"
 import app from './app'
 import { AppDataSource } from "./db";
 
 async function main(){
-
     try {
         await AppDataSource.initialize()
     
-        const port = 5000
+        const port = process.env.PORT//5000
     
         app.listen(port)
         console.log('Server listening on port', port);
